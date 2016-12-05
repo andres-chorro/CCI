@@ -7,17 +7,25 @@ public class Operations {
     * TODO: Fix this. It uses multiplication
     */
     public static int multiply(int a, int b) {
-        boolean negative = ((a >>> 31) ^ (b >>> 31)) == 1;
-        a = Math.abs(a);
-        b = Math.abs(b);
+        if (a < b) {
+            return multiply(b, a);
+        }
         int result = 0;
-        for (int i = 0; i < b; i++) {
+        for (int i = abs(b); i > 0; i = subtract(i, 1)) {
             result += a;
         }
-        if (negative) {
-            result *= -1;
+        if (b < 0) {
+            result = negate(result);
         }
+
         return result;
+    }
+
+    public static int abs(int a) {
+        if (a < 0)
+            return negate(a);
+        else
+            return a;
     }
 
     public static int subtract(int a, int b) {
@@ -41,6 +49,9 @@ public class Operations {
 
     public static void main(String[] args) {
         System.out.println(multiply(5, 6));
+        System.out.println(multiply(-5, 6));
+        System.out.println(multiply(5, -6));
+        System.out.println(multiply(-5, -6));
         System.out.println(negate(1));
         System.out.println(negate(5));
         System.out.println(negate(-200));
