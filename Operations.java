@@ -33,8 +33,16 @@ public class Operations {
     }
 
     public static int divide(int a, int b) {
-        // TODO: Finish
-        return 0;
+        int result = 0;
+        int sum = 0;
+        while (abs(sum) < abs(a)) {
+            sum += b;
+            if (abs(sum) <= abs(a))
+                result++;
+        }
+        if (a < 0 != b < 0)
+            result = negate(result);
+        return result;
     }
 
     public static int negate(int a) {
@@ -56,6 +64,9 @@ public class Operations {
         System.out.println(negate(5));
         System.out.println(negate(-200));
         System.out.println(subtract(100, 23));
-        System.out.println(divide(30, 15));
+        System.out.println(divide(10, 3));
+        System.out.println(divide(-30, 15));
+        System.out.println(divide(30, -15));
+        System.out.println(divide(-30, -15));
     }
 }
