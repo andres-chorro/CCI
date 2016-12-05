@@ -21,8 +21,7 @@ public class Operations {
     }
 
     public static int subtract(int a, int b) {
-
-        return 0;
+        return a + negate(b);
     }
 
     public static int divide(int a, int b) {
@@ -45,7 +44,7 @@ public class Operations {
         System.out.println(negate(1));
         System.out.println(negate(5));
         System.out.println(negate(-200));
-        System.out.println(subtract(11, 23));
+        System.out.println(subtract(100, 23));
         System.out.println(divide(30, 15));
     }
 }
