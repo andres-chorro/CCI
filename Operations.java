@@ -30,9 +30,21 @@ public class Operations {
         return 0;
     }
 
+    public static int negate(int a) {
+        int newSign = (a < 0) ? 1 : -1;
+        int result = 0;
+        while (a != 0) {
+            a += newSign;
+            result += newSign;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         System.out.println(multiply(5, 6));
-        System.out.println(Integer.MAX_VALUE + 1);
+        System.out.println(negate(1));
+        System.out.println(negate(5));
+        System.out.println(negate(-200));
         System.out.println(subtract(11, 23));
         System.out.println(divide(30, 15));
     }
