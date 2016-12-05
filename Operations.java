@@ -35,10 +35,11 @@ public class Operations {
     public static int divide(int a, int b) {
         int result = 0;
         int sum = 0;
-        while (abs(sum) < abs(a)) {
-            sum += b;
-            if (abs(sum) <= abs(a))
-                result++;
+        int absa = abs(a);
+        int absb = abs(b);
+        while (sum + absb <= absa) {
+            sum += absb;
+            result++;
         }
         if (a < 0 != b < 0)
             result = negate(result);
