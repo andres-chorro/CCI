@@ -4,7 +4,6 @@ public class Operations {
 
     /**
     * Multiplication using only addition.
-    * TODO: Fix this. It uses multiplication
     */
     public static int multiply(int a, int b) {
         if (a < b) {
