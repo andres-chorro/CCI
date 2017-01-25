@@ -27,5 +27,11 @@ public class SparceSearchTest {
 		String[] list = { "at", "", "", "", "ball", "ball", "", "car", "", "", "dad", "", "" };
 		assertEquals(5, SparceSearch.sparceBinarySearch("ball", list));
 	}
+	
+	@Test
+	public void noMatch() {
+		String[] list = { "at", "", "", "", "ball", "", "", "car", "", "", "dad", "", "" };
+		assertEquals(-1, SparceSearch.sparceBinarySearch("nope", list));
+	}
 
 }
