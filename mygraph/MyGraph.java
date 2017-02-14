@@ -28,11 +28,31 @@ public class MyGraph {
     		}
     	}
     }
-
     
-
-    public static void main(String[] args) {
-        
+    
+    public void bfs() {
+    	parents = new HashMap<>();
+    	for (Node n : nodes) {
+    		if (!parents.containsKey(n)) {
+    			parents.put(n, null);
+    			bfsVisit(n);
+    		}
+    	}
+    }
+    
+    public void bfsVisit(Node root) {
+    	LinkedList<Node> queue = new LinkedList<>();
+    	queue.add(root);
+    	
+    	while (!queue.isEmpty()) {
+    		Node p = queue.pop();
+    		for (Node c : p.children) {
+    			if (!parents.containsKey(c)) {
+    				parents.put(c, p);
+    				queue.add(c);
+    			}
+    		}
+    	}
     }
 }
 

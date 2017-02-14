@@ -37,7 +37,13 @@ public class MyGraphTest {
 	@Test
 	public void testDFS() {
 		graph.dfs();
-		System.out.println(graph.parents);
+		System.out.println("DFS: " + graph.parents);
+	}
+	
+	@Test
+	public void testBFS() {
+		graph.bfs();
+		System.out.println("BFS: " + graph.parents);
 	}
 
 }
